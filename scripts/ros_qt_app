@@ -1,0 +1,7 @@
+#! /usr/bin/env python
+
+import ros_qt_example
+import sys
+
+if __name__ == '__main__':
+    sys.exit(ros_qt_example.main())

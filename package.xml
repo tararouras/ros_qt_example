@@ -1,0 +1,10 @@
+<package format="2">
+  <name>ros_qt_example</name>
+  <version>0.1.0</version>
+  <description>Example ROS node with Qt</description>
+  <maintainer email="tararouras@gmail.com">akouris</maintainer>
+  <license>none</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <exec_depend>python-qt5</exec_depend>
+</package>
