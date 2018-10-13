@@ -11,7 +11,6 @@ class Window(QtWidgets.QStackedWidget):
         self._ui.setupUi(self)
         self.setCurrentIndex(0)
         self._ui.goButton.clicked.connect(self._on_click)
-
         self._worker = None
 
     def closeEvent(self, *args, **kwargs):
@@ -21,14 +20,15 @@ class Window(QtWidgets.QStackedWidget):
 
     @QtCore.pyqtSlot()
     def _on_click(self):
-        self.setCurrentIndex(1)
-        self._worker.notify()
+        if self._worker.notify():
+            self.setCurrentIndex(1)
 
     def go_back(self):
+        print('Order arrived')
         self.setCurrentIndex(0)
 
     def start(self, worker):
-        self.show()
         self._worker = worker
         self._worker.start(self.go_back)
+        self.show()
 

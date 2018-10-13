@@ -40,8 +40,9 @@ class RosNode(object):
 
     def notify(self):
         if not self._publisher:
-            return
+            return False
         self._publisher.publish('My order please!')
+        return True
 
     def _order_arrived(self, data):
         if self._callback:
